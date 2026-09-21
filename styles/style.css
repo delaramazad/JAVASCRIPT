@@ -411,6 +411,165 @@ footer {
   font-weight: 500;
 }
 
+.contact-container {
+  max-width: 100%;
+  padding: 35px;
+  margin-bottom: 50px;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+              inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+              8px 30px 30px rgba(0, 0, 0, 0.4),
+              inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contact-container h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.divider {
+  border: none;
+  width: 45px;
+  height: 3px;
+  background-color: #4da6ff;
+  border-radius: 2px;
+  margin: 0 0 18px 0;
+}
+
+.contact-text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #b0bec5;
+  margin: 0 0 24px 0;
+}
+
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.linkedin-btn img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
+.linkedin-btn span {
+  color: #f2f2f2;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.linkedin-btn:hover {
+  background-color: rgba(77, 166, 255, 0.12);
+  border-color: #4da6ff;
+  transform: translateY(-2px);
+}
+
+.linkedin-btn:active {
+  transform: translateY(0);
+}
+
+.contact-buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.contact-link-btn img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
+.contact-link-btn span {
+  color: #f2f2f2;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.contact-link-btn:hover {
+  background-color: rgba(77, 166, 255, 0.12);
+  border-color: #4da6ff;
+  transform: translateY(-2px);
+}
+
+.contact-link-btn:active {
+  transform: translateY(0);
+}
+
+.project-list {
+  padding: 30px;
+  margin-bottom: 50px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+              inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+              8px 30px 30px rgba(0, 0, 0, 0.4),
+              inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.project-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project-list li {
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.project-list a {
+  color: #3f93e8;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.project-list a:hover {
+  text-decoration: underline;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .gallery-container {
@@ -447,5 +606,19 @@ footer {
   .welcome img {
     width: 140px;
     height: 140px;
+  }
+
+  .contact-container {
+    padding: 25px 20px;
+  }
+
+    .contact-buttons-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-link-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
