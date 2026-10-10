@@ -1,58 +1,148 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <title>Contact & Feedback - Delaram Azad</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/feedback.css" />
+    
+    <!-- js file for validation -->
+    <script src="../js/feedback.js" defer></script>
   </head>
+
   <body>
     <header id="header1">
       <div class="topNav">
         <h2 id="myName">Delaram Azad</h2>
         <nav class="nav-links">
-          <a href="home.html">Home</a>
+          <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="gallery.html">Gallery</a>
+          <a href="skills.html">Skills</a>
           <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact.html" aria-current="page">Contact</a>
         </nav>
       </div>
     </header>
 
-    <div class="contact-container">
-      <h2>Get In Touch</h2>
-      <hr class="divider"/>
+    <main class="contact-page-container">
+      <!-- contact information -->
+      <div class="contact-container">
+        <h2>Get In Touch</h2>
+        <hr class="divider" />
+        <p class="contact-text">
+          Feel free to reach out to me if you have any questions or would like to
+          collaborate!
+        </p>
 
-      <p class="contact-text">
-        Feel free to reach out to me if you have any questions or would like to
-        collaborate!
-      </p>
+        <div class="contact-buttons-wrapper">
+          <a
+            href="https://www.linkedin.com/in/delaram-azad-07835b170"
+            target="_blank"
+            class="contact-link-btn">
+            <img src="/assets/LinkedIn_icon.svg.webp" alt="LinkedIn Logo" />
+            <span>LinkedIn</span>
+          </a>
 
-      <div class="contact-buttons-wrapper">
-        <a
-          href="https://www.linkedin.com/in/delaram-azad-07835b170"
-          target="_blank"
-          class="contact-link-btn"
-        >
-          <img src="assets/LinkedIn_icon.svg.webp" alt="LinkedIn Logo" />
-          <span>LinkedIn</span>
-        </a>
+          <a
+            href="https://www.facebook.com/aram.azad.50/"
+            target="_blank"
+            class="contact-link-btn">
+            <img src="/assets/Facebook_f_logo_(2021).svg.webp" alt="Facebook Logo" />
+            <span>Facebook</span>
+          </a>
 
-        <a
-          href="https://www.facebook.com/aram.azad.50/"
-          target="_blank"
-          class="contact-link-btn"
-        >
-          <img src="assets/Facebook_f_logo_(2021).svg.webp" alt="Facebook Logo" />
-          <span>Facebook</span>
-        </a>
-
-        <a href="mailto:delaram.azad99@gmail.com" class="contact-link-btn">
-          <img src="assets/Gmail_icon_(2020).svg.webp" alt="Gmail Logo" />
-          <span>Gmail</span>
-        </a>
+          <a href="mailto:delaram.azad99@gmail.com" class="contact-link-btn">
+            <img src="/assets/Gmail_icon_(2020).svg.webp" alt="Gmail Logo" />
+            <span>Gmail</span>
+          </a>
+        </div>
       </div>
-    </div>
+
+      <!-- feedback form -->
+      <div class="feedback-container">
+        <h2>Send Feedback</h2>
+        <hr class="divider" />
+
+        <!-- statsu message -->
+        <div id="form-status" class="form-status" aria-live="polite"></div>
+
+        <form id="feedback-form" novalidate>
+          <!-- full name -->
+          <div class="form-group">
+            <label for="fullname">Full Name *</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="e.g. Lily Smith"
+              required
+            />
+            <span class="error-message" id="fullname-error" aria-live="polite"></span>
+          </div>
+
+          <!-- email -->
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="e.g. lily@example.com"
+              required
+            />
+            <span class="error-message" id="email-error" aria-live="polite"></span>
+          </div>
+
+          <!--topic of interest -->
+          <div class="form-group">
+            <label for="topic">Topic of Interest *</label>
+            <select id="topic" name="topic" required>
+              <option value="">SELECT A TOPIC</option>
+              <option value="projects">Web Projects</option>
+              <option value="collaboration">Collaboration / Job Opportunity</option>
+              <option value="general">General Feedback</option>
+            </select>
+            <span class="error-message" id="topic-error" aria-live="polite"></span>
+          </div>
+
+          <!-- comments with live counter -->
+          <div class="form-group">
+            <label for="comments">Comments *</label>
+            <textarea
+              id="comments"
+              name="comments"
+              rows="5"
+              placeholder="Write your feedback here (at least 15 characters)..."
+              required
+            ></textarea>
+            <div class="textarea-footer">
+              <span class="error-message" id="comments-error" aria-live="polite"></span>
+              <span id="char-counter" class="char-counter">0 / 15 characters minimum</span>
+            </div>
+          </div>
+
+          <!-- website -->
+          <div class="form-group">
+            <label for="website">Website (Optional)</label>
+            <input
+              type="url"
+              id="website"
+              name="website"
+              placeholder="https://example.com"
+            />
+            <span class="error-message" id="website-error" aria-live="polite"></span>
+          </div>
+
+          <!-- buttons -->
+          <div class="form-actions">
+            <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+            <button type="reset" id="clear-btn" class="btn btn-secondary">Clear</button>
+          </div>
+        </form>
+      </div>
+    </main>
 
     <footer>
       <p>Copyright &copy; 2026 Delaram Azad</p>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills - Delaram Azad</title>
+    <link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/skills.css" />
+<script src="../js/skills.js" defer></script>
+  </head>
+  
+  <body>
+    <header id="header1">
+      <div class="topNav">
+        <h2 id="myName">Delaram Azad</h2>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="skills.html" aria-current="page">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="skills-page-container">
+      <div class="skills-header">
+        <h1>My Skills</h1>
+        <p>Explore my technical skill set with interactive filtering and sorting.</p>
+      </div>
+
+      <!-- Category filters, sorting, and counter -->
+      <div class="skills-controls" aria-label="Skills filtering and sorting controls"> <!--aria-label enables screen reader support-->
+        <div class="filter-group" role="group" aria-label="Filter skills by category">
+          <button type="button" class="filter-btn active" data-category="all" aria-pressed="true">
+            All Skills
+          </button>
+          <button type="button" class="filter-btn" data-category="Frontend" aria-pressed="false">
+            Frontend
+          </button>
+          <button type="button" class="filter-btn" data-category="Backend" aria-pressed="false">
+            Backend
+          </button>
+          <button type="button" class="filter-btn" data-category="Tools" aria-pressed="false">
+            Tools
+          </button>
+        </div>
+
+        <div class="sort-and-count-wrapper">
+          <div class="sort-group">
+            <label for="skill-sort">Sort by:</label>
+            <select id="skill-sort" name="sort">
+              <option value="proficiency-desc">Proficiency (High to Low)</option>
+              <option value="experience-desc">Years of Experience (High to Low)</option>
+              <option value="name-asc">Name (A–Z)</option>
+            </select>
+          </div>
+
+          <p id="skills-counter" class="skills-counter" aria-live="polite">
+            Showing 0 of 0 skills
+          </p>
+        </div>
+      </div>
+
+      <!-- Dynamic skill cards rendered via skills.js -->
+      <div 
+        id="skills-container" 
+        class="skills-grid" 
+        aria-label="Skills list"
+      ></div>
+    </main>
+
+    <footer>
+      <p>Copyright &copy; 2026 Delaram Azad</p>
+    </footer>
+  </body>
+</html>

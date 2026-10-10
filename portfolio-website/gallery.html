@@ -1,13 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Portfolio</title>
-    <meta name="description" conent="Lec3 Introduction to HTML" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Delaram Azad</title>
+    <meta name="description" content="Photography and visual gallery" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,226 +18,120 @@
       <div class="topNav">
         <h2 id="myName">Delaram Azad</h2>
         <nav class="nav-links">
-          <a href="home.html">Home</a>
+          <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="gallery.html">Gallery</a>
+          <a href="gallery.html" aria-current="page">Gallery</a>
+          <a href="skills.html">Skills</a>
           <a href="projects.html">Projects</a>
           <a href="contact.html">Contact</a>
         </nav>
       </div>
     </header>
 
-    <h1>Gallery</h1>
+    <main>
+      <h1>Gallery</h1>
 
-    <div class="gallery-container">
-      <div class="gallery">
-        <a target="_blank" href=""
-          ><img
-            src="/assets/648A41F0-11AE-41EF-BADD-1A112A740CFD_1_105_c.jpeg"
-            alt="Sunset in Nice"
-        /></a>
-        <div class="title"><h4>Sunset</h4></div>
-        <div class="description"><p>Sunset in Nice 2026</p></div>
-      </div>
-
-      <div class="gallery">
-        <a target="_blank" href=""
-          ><img
-            src="/assets/53AD335E-EB62-4D79-8681-F98C8A97DCAB_1_105_c.jpeg"
-            alt="Sunset in Mamlo"
-        /></a>
-        <div class="title"><h4>Sunset</h4></div>
-        <div class="description"><p>Sunset in Mamlo 2026</p></div>
-      </div>
-
-      <div class="gallery">
-        <a target="_blank" href=""
-          ><img
-            src="/assets/F6E0263A-0C42-45BD-8888-CC3E1472B2E9_4_5005_c.jpeg"
-            alt="Sunset in Copenhagen"
-        /></a>
-        <div class="title"><h4>Sunset</h4></div>
-        <div class="description"><p>Sunset in Copenhagen 2026</p></div>
-      </div>
-
-      <div class="gallery">
-        <a target="_blank" href=""
-          ><img
-            src="/assets/2E1078BD-FB11-4C1C-8A06-5C61A9CCA5D0_4_5005_c.jpeg"
-            alt="Blue Vespa"
-        /></a>
-        <div class="title"><h4>Blue Vespa</h4></div>
-        <div class="description"><p>Mallorca 2026</p></div>
-      </div>
-
-      <div class="gallery">
-        <a target="_blank" href=""
-          ><img
-            src="/assets/538FFD88-6DE6-4D5D-ACC3-3D5D4A7D81F4_4_5005_c.jpeg"
-            alt="House in Mallorca"
-        /></a>
-        <div class="title"><h4>Red Vespa</h4></div>
-        <div class="description"><p>Mallorca 2026</p></div>
-      </div>
-
-      <div class="gallery">
-        <a target="_blank" href=""
-          ><img
-            src="assets/26366F92-354F-4BFC-9B4D-C2F65BCC98A9_4_5005_c.jpeg"
-            alt="House in Mallorca"
-        /></a>
-        <div class="title"><h4>Street in Mallorca</h4></div>
-        <div class="description"><p>Mallorca 2026</p></div>
-      </div>
-
-      <div class="gallery">
-        <a target="_blank" href=""
-          ><img
-            src="assets/0D142227-8552-4FDB-90D3-213C008DFC6F_1_105_c.jpeg"
-            alt="building in Cannes"
-        /></a>
-        <div class="title"><h4>Balcony</h4></div>
-        <div class="description"><p>Cannes 2026</p></div>
-      </div>
-
-      <div class="gallery">
-        <a target="_blank" href=""
-          ><img
-            src="assets/2FC96549-5623-4A60-AE92-8C0A5EAAE205_1_105_c.jpeg"
-            alt="building in Cannes"
-        /></a>
-        <div class="title"><h4>Balcony</h4></div>
-        <div class="description"><p>Cannes 2026</p></div>
-      </div>
-
-      <div class="gallery">
-        <a target="_blank" href=""
-          ><img
-            src="assets/F347AD54-52F4-4387-826A-3AC7E07382AA_1_105_c.jpeg"
-            alt="Sur la mere"
-        /></a>
-        <div class="title"><h4>Sur la mere</h4></div>
-        <div class="description"><p>French Riviera 2026</p></div>
-      </div>
-    </div>
-
-    <div class="skills-wrapper">
-      <!--Skills -->
-      <div class="container">
-        <h2>Skills</h2>
-
-        <div class="skill-item">
-          <h3 class="name">Java</h3>
-          <div class="rating">
-            <input type="radio" name="Java" />
-            <input type="radio" name="Java" />
-            <input type="radio" name="Java" />
-            <input type="radio" name="Java" />
-            <input type="radio" name="Java" />
-          </div>
+      <div class="gallery-container">
+        <div class="gallery">
+          <a target="_blank" href="/assets/648A41F0-11AE-41EF-BADD-1A112A740CFD_1_105_c.jpeg">
+            <img
+              src="/assets/648A41F0-11AE-41EF-BADD-1A112A740CFD_1_105_c.jpeg"
+              alt="Sunset in Nice"
+            />
+          </a>
+          <div class="title"><h4>Sunset</h4></div>
+          <div class="description"><p>Sunset in Nice 2026</p></div>
         </div>
 
-        <div class="skill-item">
-          <h3 class="name">HTML</h3>
-          <div class="rating">
-            <input type="radio" name="HTML" />
-            <input type="radio" name="HTML" />
-            <input type="radio" name="HTML" />
-            <input type="radio" name="HTML" />
-            <input type="radio" name="HTML" />
-          </div>
+        <div class="gallery">
+          <a target="_blank" href="/assets7/53AD335E-EB62-4D79-8681-F98C8A97DCAB_1_105_c.jpeg">
+            <img
+              src="/assets/53AD335E-EB62-4D79-8681-F98C8A97DCAB_1_105_c.jpeg"
+              alt="Sunset in Malmö"
+            />
+          </a>
+          <div class="title"><h4>Sunset</h4></div>
+          <div class="description"><p>Sunset in Malmö 2026</p></div>
         </div>
 
-        <div class="skill-item">
-          <h3 class="name">CSS</h3>
-          <div class="rating">
-            <input type="radio" name="CSS" />
-            <input type="radio" name="CSS" />
-            <input type="radio" name="CSS" />
-            <input type="radio" name="CSS" />
-            <input type="radio" name="CSS" />
-          </div>
+        <div class="gallery">
+          <a target="_blank" href="/assets/F6E0263A-0C42-45BD-8888-CC3E1472B2E9_4_5005_c.jpeg">
+            <img
+              src="/assets/F6E0263A-0C42-45BD-8888-CC3E1472B2E9_4_5005_c.jpeg"
+              alt="Sunset in Copenhagen"
+            />
+          </a>
+          <div class="title"><h4>Sunset</h4></div>
+          <div class="description"><p>Sunset in Copenhagen 2026</p></div>
         </div>
 
-        <div class="skill-item">
-          <h3 class="name">JavaScript</h3>
-          <div class="rating">
-            <input type="radio" name="JavaScript" />
-            <input type="radio" name="JavaScript" />
-            <input type="radio" name="JavaScript" />
-            <input type="radio" name="JavaScript" />
-            <input type="radio" name="JavaScript" />
-          </div>
+        <div class="gallery">
+          <a target="_blank" href="/assets/2E1078BD-FB11-4C1C-8A06-5C61A9CCA5D0_4_5005_c.jpeg">
+            <img
+              src="/assets/2E1078BD-FB11-4C1C-8A06-5C61A9CCA5D0_4_5005_c.jpeg"
+              alt="Blue Vespa"
+            />
+          </a>
+          <div class="title"><h4>Blue Vespa</h4></div>
+          <div class="description"><p>Mallorca 2026</p></div>
         </div>
 
-        <div class="skill-item">
-          <h3 class="name">Python</h3>
-          <div class="rating">
-            <input type="radio" name="Python" />
-            <input type="radio" name="Python" />
-            <input type="radio" name="Python" />
-            <input type="radio" name="Python" />
-            <input type="radio" name="Python" />
-          </div>
+        <div class="gallery">
+          <a target="_blank" href="/assets/538FFD88-6DE6-4D5D-ACC3-3D5D4A7D81F4_4_5005_c.jpeg">
+            <img
+              src="/assets/538FFD88-6DE6-4D5D-ACC3-3D5D4A7D81F4_4_5005_c.jpeg"
+              alt="Red Vespa"
+            />
+          </a>
+          <div class="title"><h4>Red Vespa</h4></div>
+          <div class="description"><p>Mallorca 2026</p></div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="/assets/26366F92-354F-4BFC-9B4D-C2F65BCC98A9_4_5005_c.jpeg">
+            <img
+              src="/assets/26366F92-354F-4BFC-9B4D-C2F65BCC98A9_4_5005_c.jpeg"
+              alt="Street in Mallorca"
+            />
+          </a>
+          <div class="title"><h4>Street in Mallorca</h4></div>
+          <div class="description"><p>Mallorca 2026</p></div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="/assets/0D142227-8552-4FDB-90D3-213C008DFC6F_1_105_c.jpeg">
+            <img
+              src="/assets/0D142227-8552-4FDB-90D3-213C008DFC6F_1_105_c.jpeg"
+              alt="Balcony in Cannes"
+            />
+          </a>
+          <div class="title"><h4>Balcony</h4></div>
+          <div class="description"><p>Cannes 2026</p></div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="/assets/2FC96549-5623-4A60-AE92-8C0A5EAAE205_1_105_c.jpeg">
+            <img
+              src="/assets/2FC96549-5623-4A60-AE92-8C0A5EAAE205_1_105_c.jpeg"
+              alt="Balcony in Cannes"
+            />
+          </a>
+          <div class="title"><h4>Balcony</h4></div>
+          <div class="description"><p>Cannes 2026</p></div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="/assets/F347AD54-52F4-4387-826A-3AC7E07382AA_1_105_c.jpeg">
+            <img
+              src="/assets/F347AD54-52F4-4387-826A-3AC7E07382AA_1_105_c.jpeg"
+              alt="Sur la mer"
+            />
+          </a>
+          <div class="title"><h4>Sur la mer</h4></div>
+          <div class="description"><p>French Riviera 2026</p></div>
         </div>
       </div>
-
-      <!-- Experience -->
-      <div class="container">
-        <h2>Experience</h2>
-
-        <div class="skill-item">
-          <h3 class="skill-name">Social Worker</h3>
-          <p>2026 - Social Worker at Social Services</p>
-        </div>
-
-        <div class="skill-item">
-          <h3 class="skill-name">Teacher Assistant</h3>
-          <p>2025 - Teachers Assistant at Object Oriented Programming</p>
-        </div>
-
-        <div class="skill-item">
-          <h3 class="skill-name">Student Representative</h3>
-          <p>2025 - Student Representative at Akavia</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="contact-container">
-      <h2>Contact</h2>
-      <form action="submit.php" class="contact-left">
-        <div class="contat-left-title">
-          <h2>Get in touch</h2>
-          <hr />
-        </div>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          class="contact-input"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          class="contact-input"
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          class="contact-input"
-          required
-        ></textarea>
-        <button type="submit" class="contact-button">Submit</button>
-      </form>
-
-      <div class="contact-right">
-        <h3>Contact Information</h3>
-        <p>delaram.azad99@gmail.com</p>
-      </div>
-    </div>
+    </main>
 
     <footer>
       <p>Copyright &copy; 2026 Delaram Azad</p>
