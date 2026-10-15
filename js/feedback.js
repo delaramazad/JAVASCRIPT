@@ -171,7 +171,7 @@ form.addEventListener("submit", (event) => {
     if (isFormValid) {
         const enterdName = fullNameInput.value.trim();
         formStatus.textContent = `Thank you for your feedback, ${enterdName}!`;
-        formStatus.classList.add("success");
+        formStatus.classList.add("show");
         formStatus.classList.remove("error");
         resetForm();
 
