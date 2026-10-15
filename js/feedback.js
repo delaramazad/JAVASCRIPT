@@ -1,6 +1,36 @@
+const form = document.getElementById("feedback-form");
+const fullNameInput = document.getElementById("fullname");
+const emailInput = document.getElementById("email");
+const topicSelect = document.getElementById("topic");
+const commentsInput = document.getElementById("comments");
+const websiteInput = document.getElementById("website");
+const charCounter = document.getElementById("char-counter");
+const formStatus = document.getElementById("form-status");
+const clearButton = document.getElementById("clear-button");
+
+//error messages
+const fullNameError = document.getElementById("fullname-error");
+const emailError = document.getElementById("email-error");
+const topicError = document.getElementById("topic-error");
+const commentsError = document.getElementById("comments-error");
+const websiteError = document.getElementById("website-error");
+
+//visual feedback for invalid and valid fields
+function showFieldError(inputElement, errorElement, message) {
+    inputElement.classList.add("invalid");
+    inputElement.classList.remove("valid");
+    errorElement.textContent = message;
+}
+
+function clearFieldError(inputElement, errorElement) {
+    inputElement.classList.remove("invalid");
+    inputElement.classList.add("valid");
+    errorElement.textContent = "";
+}
+
+
+
 const text = document.getElementById('comments').value;
-const charCounter = document.getElementById('char-counter');
-const commentsInput = document.getElementById('comments');
 
 function updateCharCounter() {
     const length = commentsInput.value.length;
@@ -21,4 +51,6 @@ commentsInput.addEventListener('input', updateCharCounter);
 
 updateCharCounter(); // call the function to initialize the character count
     
+
+
 
