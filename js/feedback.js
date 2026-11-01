@@ -8,7 +8,7 @@ const charCounter = document.getElementById("char-counter");
 const formStatus = document.getElementById("form-status");
 const clearButton = document.getElementById("clear-btn");
 
-// error message
+// error messages
 const fullNameError = document.getElementById("fullname-error");
 const emailError = document.getElementById("email-error");
 const topicError = document.getElementById("topic-error");
@@ -99,14 +99,14 @@ function validateWebsite() {
   }
 }
 
-// character counter update function
+// live character counter
 function updateCharCounter() {
   if (!commentsInput || !charCounter) return;
   const length = commentsInput.value.length;
   const minLength = 15;
 
   if (length < minLength) {
-    charCounter.textContent = `${length} / ${minLength} characters minimum`;
+    charCounter.textContent = `${length} /${minLength} characters minimum`;
     charCounter.classList.add("invalid");
     charCounter.classList.remove("valid");
   } else {
@@ -116,7 +116,7 @@ function updateCharCounter() {
   }
 }
 
-// reset form function
+// Reset form
 function resetForm() {
   form.reset();
   const allInputs = [fullNameInput, emailInput, topicSelect, commentsInput, websiteInput];
@@ -125,15 +125,13 @@ function resetForm() {
   allInputs.forEach((input) => {
     input.classList.remove("input-error", "input-valid");
   });
-
   allErrors.forEach((error) => {
     error.textContent = "";
   });
-
   updateCharCounter();
 }
 
-// event listeners 
+// Event listeners for live validation
 fullNameInput.addEventListener("input", () => {
   if (fullNameInput.classList.contains("input-error")) validateFullName();
 });
@@ -157,7 +155,7 @@ if (clearButton) {
   clearButton.addEventListener("click", resetForm);
 }
 
-// form submission event listener 
+// Form submit
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -173,7 +171,7 @@ form.addEventListener("submit", (event) => {
     const enteredName = fullNameInput.value.trim();
     formStatus.textContent = `Thanks for your feedback, ${enteredName}!`;
     formStatus.classList.add("show");
-    
+
     resetForm();
 
     setTimeout(() => {
@@ -183,5 +181,4 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-// character counter initialization
 updateCharCounter();
