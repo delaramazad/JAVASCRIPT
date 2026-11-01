@@ -6,184 +6,182 @@ const commentsInput = document.getElementById("comments");
 const websiteInput = document.getElementById("website");
 const charCounter = document.getElementById("char-counter");
 const formStatus = document.getElementById("form-status");
-const clearButton = document.getElementById("clear-button");
+const clearButton = document.getElementById("clear-btn");
 
-//error messages
+// error message
 const fullNameError = document.getElementById("fullname-error");
 const emailError = document.getElementById("email-error");
 const topicError = document.getElementById("topic-error");
 const commentsError = document.getElementById("comments-error");
 const websiteError = document.getElementById("website-error");
 
-//visual feedback for invalid and valid fields
+// visual feedback for input fields
 function showFieldError(inputElement, errorElement, message) {
-    inputElement.classList.add("invalid");
-    inputElement.classList.remove("valid");
-    errorElement.textContent = message;
+  inputElement.classList.add("input-error");
+  inputElement.classList.remove("input-valid");
+  errorElement.textContent = message;
 }
 
 function clearFieldError(inputElement, errorElement) {
-    inputElement.classList.remove("invalid");
-    inputElement.classList.add("valid");
-    errorElement.textContent = "";
+  inputElement.classList.remove("input-error");
+  inputElement.classList.add("input-valid");
+  errorElement.textContent = "";
 }
 
-//funtions to validate the form
+// validation functions
 function validateFullName() {
-    const fullName = fullNameInput.value.trim();
-    const namePattern = /^[a-zA-Z\s]+$/; // letters and spaces
-    if (fullName === "") {
-        showFieldError(fullNameInput, fullNameError, "Full name is required.");
-        return false;
-    }
-    if (!namePattern.test(fullName)) {
-        showFieldError(fullNameInput, fullNameError, "Full name can only contain letters and spaces.");
-        return false;
-    }
-    clearFieldError(fullNameInput, fullNameError);
-    return true;
+  const fullName = fullNameInput.value.trim();
+  const namePattern = /^[a-zA-Zà-öÀ-Ö\s'-]{2,}$/;
+  if (fullName === "") {
+    showFieldError(fullNameInput, fullNameError, "Full name is required.");
+    return false;
+  }
+  if (!namePattern.test(fullName)) {
+    showFieldError(fullNameInput, fullNameError, "Please enter at least 2 valid letters.");
+    return false;
+  }
+  clearFieldError(fullNameInput, fullNameError);
+  return true;
 }
 
 function validateEmail() {
-    const email = emailInput.value.trim();
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // basic email pattern
-    if (email === "") {
-        showFieldError(emailInput, emailError, "Email is required.");
-        return false;
-    }
-    if (!emailPattern.test(email)) {
-        showFieldError(emailInput, emailError, "Please enter a valid email address.");
-        return false;
-    }
-    clearFieldError(emailInput, emailError);
-    return true;
+  const email = emailInput.value.trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email === "") {
+    showFieldError(emailInput, emailError, "Email is required.");
+    return false;
+  }
+  if (!emailPattern.test(email)) {
+    showFieldError(emailInput, emailError, "Please enter a valid email address.");
+    return false;
+  }
+  clearFieldError(emailInput, emailError);
+  return true;
 }
 
 function validateTopic() {
-    if (topicSelect.value === "") {
-        showFieldError(topicSelect, topicError, "Please select a topic.");
-        return false;
-    }
-    clearFieldError(topicSelect, topicError);
-    return true;
+  if (topicSelect.value === "") {
+    showFieldError(topicSelect, topicError, "Please select a topic.");
+    return false;
+  }
+  clearFieldError(topicSelect, topicError);
+  return true;
 }
 
 function validateComments() {
-    const comments = commentsInput.value.trim();
-    const minLength = 15;
-    if(comments.length < minLength) {
-        showFieldError(commentsInput, commentsError, `Comments must be at least ${minLength} characters long.`);
-        return false;
-    }
-    clearFieldError(commentsInput, commentsError);
+  const comments = commentsInput.value.trim();
+  const minLength = 15;
+  if (comments.length < minLength) {
+    showFieldError(commentsInput, commentsError, `Comments must be at least ${minLength} characters long.`);
+    return false;
+  }
+  clearFieldError(commentsInput, commentsError);
+  return true;
+}
+
+function validateWebsite() {
+  const website = websiteInput.value.trim();
+  if (website === "") {
+    websiteInput.classList.remove("input-error", "input-valid");
+    websiteError.textContent = "";
     return true;
+  }
+  try {
+    const url = new URL(website);
+    if (url.protocol === "http:" || url.protocol === "https:") {
+      clearFieldError(websiteInput, websiteError);
+      return true;
+    }
+    throw new Error("Invalid protocol");
+  } catch {
+    showFieldError(websiteInput, websiteError, "Please enter a valid URL (http or https).");
+    return false;
+  }
 }
 
-function validateWebsite() { //not required but checked if filled
-    const website = websiteInput.value.trim();
-    if(website ==""){
-        websiteInput.classList.remove("invalid");
-        websiteError.textContent = "";
-        return true;    
-    }
-
-    try{
-        const url = new URL(website);
-        if(url.protocol === "http:" || url.protocol === "https:"){
-            clearFieldError(websiteInput, websiteError);
-            return true;
-        }
-        throw new Error("Invalid protocol");
-    } catch{
-        showFieldError(websiteInput, websiteError, "Please enter a valid URL (http or https).");
-        return false;
-    }
-}
-
-
+// character counter update function
 function updateCharCounter() {
-    if (!commentsInput || !charCounter) return;
-    const length = commentsInput.value.length;
-    const minLength = 15;
+  if (!commentsInput || !charCounter) return;
+  const length = commentsInput.value.length;
+  const minLength = 15;
 
-    if (length < minLength) {
-        charCounter.textContent = `${length} / ${minLength} characters minimum`;
-        charCounter.classList.add("invalid");
-        charCounter.classList.remove("valid");
-    } else {
-        charCounter.textContent = `${length} characters (minmum reached)`;
-        charCounter.classList.add("valid");
-        charCounter.classList.remove("invalid");
-    }
+  if (length < minLength) {
+    charCounter.textContent = `${length} / ${minLength} characters minimum`;
+    charCounter.classList.add("invalid");
+    charCounter.classList.remove("valid");
+  } else {
+    charCounter.textContent = `${length} characters (minimum reached)`;
+    charCounter.classList.add("valid");
+    charCounter.classList.remove("invalid");
+  }
 }
 
-//reset the form
+// reset form function
 function resetForm() {
-    form.reset();
-    const allInputs = [fullNameInput, emailInput, topicSelect, commentsInput, websiteInput];
-    const allErrors = [fullNameError, emailError, topicError, commentsError, websiteError];
+  form.reset();
+  const allInputs = [fullNameInput, emailInput, topicSelect, commentsInput, websiteInput];
+  const allErrors = [fullNameError, emailError, topicError, commentsError, websiteError];
 
-    allInputs.forEach((input) => {
-        input.classList.remove("invalid");
-    })
+  allInputs.forEach((input) => {
+    input.classList.remove("input-error", "input-valid");
+  });
 
-    allErrors.forEach((error) => {
-        error.textContent = "";
-    });
+  allErrors.forEach((error) => {
+    error.textContent = "";
+  });
 
-    updateCharCounter();
+  updateCharCounter();
 }
 
-//event listener for live validation
-fullNameInput.addEventListener("input", ()=> {
-    if(fullNameInput.classList.contains("invalid")) validateFullName();
+// event listeners 
+fullNameInput.addEventListener("input", () => {
+  if (fullNameInput.classList.contains("input-error")) validateFullName();
 });
 
-emailInput.addEventListener("input", ()=> {
-    if(emailInput.classList.contains("invalid")) validateEmail();
+emailInput.addEventListener("input", () => {
+  if (emailInput.classList.contains("input-error")) validateEmail();
 });
+
 topicSelect.addEventListener("change", validateTopic);
-commentsInput.addEventListener("input", ()=> {
-    if(commentsInput.classList.contains("invalid")) validateComments();
-    updateCharCounter();
-});
-websiteInput.addEventListener("input", ()=> {
-    if(websiteInput.classList.contains("invalid")) validateWebsite();
+
+commentsInput.addEventListener("input", () => {
+  updateCharCounter();
+  if (commentsInput.classList.contains("input-error")) validateComments();
 });
 
-//clear btn
-if(clearButton) {
-    clearButton.addEventListener("click", resetForm);
+websiteInput.addEventListener("input", () => {
+  if (websiteInput.classList.contains("input-error")) validateWebsite();
+});
+
+if (clearButton) {
+  clearButton.addEventListener("click", resetForm);
 }
 
-//submit event listener
+// form submission event listener 
 form.addEventListener("submit", (event) => {
-    event.preventDefault(); // prevent the default form submission
+  event.preventDefault();
 
-    const isFullNameValid = validateFullName();
-    const isEmailValid = validateEmail();
-    const isTopicValid = validateTopic();
-    const isCommentsValid = validateComments();
-    const isWebsiteValid = validateWebsite();
+  const isFullNameValid = validateFullName();
+  const isEmailValid = validateEmail();
+  const isTopicValid = validateTopic();
+  const isCommentsValid = validateComments();
+  const isWebsiteValid = validateWebsite();
 
-    const isFormValid = isFullNameValid && isEmailValid && isTopicValid && isCommentsValid && isWebsiteValid;
+  const isFormValid = isFullNameValid && isEmailValid && isTopicValid && isCommentsValid && isWebsiteValid;
 
-    if (isFormValid) {
-        const enterdName = fullNameInput.value.trim();
-        formStatus.textContent = `Thank you for your feedback, ${enterdName}!`;
-        formStatus.classList.add("show");
-        formStatus.classList.remove("error");
-        resetForm();
+  if (isFormValid) {
+    const enteredName = fullNameInput.value.trim();
+    formStatus.textContent = `Thanks for your feedback, ${enteredName}!`;
+    formStatus.classList.add("show");
+    
+    resetForm();
 
-        setTimeout(() => {
-            formStatus.classList.remove("show");
-            formStatus.textContent = "";
-        }, 5000); // hide the message after 5 seconds
-    }
+    setTimeout(() => {
+      formStatus.classList.remove("show");
+      formStatus.textContent = "";
+    }, 4000);
+  }
 });
 
-updateCharCounter(); // call the function to initialize the character count
-    
-
-
-
+// character counter initialization
+updateCharCounter();
