@@ -1,4 +1,4 @@
-// data array for skills
+// Data array for skills (Grade 4: minst 8 objekt över minst 3 kategorier)
 const skillsData = [
   {
     id: 1,
@@ -72,11 +72,11 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 const sortSelect = document.getElementById("skill-sort");
 const skillsCounter = document.getElementById("skills-counter");
 
-// state
+// State
 let currentCategory = "all";
 let currentSort = "proficiency-desc";
 
-// rendering function
+// Rendering function
 function renderSkills(skills) {
   skillsContainer.innerHTML = "";
 
@@ -84,7 +84,6 @@ function renderSkills(skills) {
     const card = document.createElement("article");
     card.classList.add("skill-card");
 
-    // stars for skills
     const starIcons = "★".repeat(skill.proficiency) + "☆".repeat(5 - skill.proficiency);
 
     card.innerHTML = `
@@ -102,19 +101,16 @@ function renderSkills(skills) {
     skillsContainer.appendChild(card);
   });
 
-  // update skills counter
   skillsCounter.textContent = `Showing ${skills.length} of ${skillsData.length} skills`;
 }
 
-// funtion to update the skills view based on current filters and sorting
+// Function to update skills view (combined filter and sort)
 function updateSkillsView() {
-  // filters
   let filtered = skillsData.filter((skill) => {
     if (currentCategory === "all") return true;
     return skill.category.toLowerCase() === currentCategory.toLowerCase();
   });
 
-  // sorting
   let sorted = [...filtered].sort((a, b) => {
     if (currentSort === "proficiency-desc") {
       return b.proficiency - a.proficiency;
@@ -126,11 +122,10 @@ function updateSkillsView() {
     return 0;
   });
 
-  // render the skills
   renderSkills(sorted);
 }
 
-// event listeners for filter buttons
+// Event listeners for filter buttons
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
     filterButtons.forEach((btn) => {
@@ -146,9 +141,11 @@ filterButtons.forEach((button) => {
   });
 });
 
+// Event listener for sort dropdown
 sortSelect.addEventListener("change", (e) => {
   currentSort = e.target.value;
   updateSkillsView();
 });
 
+// Initial render
 updateSkillsView();
