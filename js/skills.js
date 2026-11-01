@@ -2,7 +2,7 @@
 const skillsData = [
   {
     id: 1,
-    name: "HTML5",
+    name: "HTML",
     category: "Frontend",
     proficiency: 5,
     yearsExperience: 3,
@@ -12,7 +12,7 @@ const skillsData = [
     id: 2,
     name: "CSS3",
     category: "Frontend",
-    proficiency: 4,
+    proficiency: 5,
     yearsExperience: 3,
     description: "Building responsive layouts using Flexbox, CSS Grid, and modern animations."
   },
@@ -20,8 +20,8 @@ const skillsData = [
     id: 3,
     name: "JavaScript",
     category: "Frontend",
-    proficiency: 4,
-    yearsExperience: 2.5,
+    proficiency: 3,
+    yearsExperience: 2,
     description: "Implementing interactive UI components, asynchronous logic, and DOM manipulation."
   },
   {
@@ -60,7 +60,7 @@ const skillsData = [
     id: 8,
     name: "Responsive Design",
     category: "Frontend",
-    proficiency: 4,
+    proficiency: 3,
     yearsExperience: 2.5,
     description: "Designing fluid multi-device layouts tailored for mobile, tablet, and desktop viewports."
   }
