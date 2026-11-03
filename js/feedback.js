@@ -131,7 +131,7 @@ function resetForm() {
   updateCharCounter();
 }
 
-// Event listeners for live validation
+//event listeners for validation and live feedback 
 fullNameInput.addEventListener("input", () => {
   if (fullNameInput.classList.contains("input-error")) validateFullName();
 });
