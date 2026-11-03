@@ -10,7 +10,7 @@ const skillsData = [
   },
   {
     id: 2,
-    name: "CSS3",
+    name: "CSS",
     category: "Frontend",
     proficiency: 5,
     yearsExperience: 3,
@@ -66,17 +66,17 @@ const skillsData = [
   }
 ];
 
-// DOM elements
+//DOM elements
 const skillsContainer = document.getElementById("skills-container");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const sortSelect = document.getElementById("skill-sort");
 const skillsCounter = document.getElementById("skills-counter");
 
-// State
+//state variables
 let currentCategory = "all";
 let currentSort = "proficiency-desc";
 
-// Rendering function
+//renderering skills cards based on filtered and sorted data
 function renderSkills(skills) {
   skillsContainer.innerHTML = "";
 
@@ -104,7 +104,7 @@ function renderSkills(skills) {
   skillsCounter.textContent = `Showing ${skills.length} of ${skillsData.length} skills`;
 }
 
-// Function to update skills view (combined filter and sort)
+//function to update the skills view based on filter and sort criteria
 function updateSkillsView() {
   let filtered = skillsData.filter((skill) => {
     if (currentCategory === "all") return true;
@@ -125,7 +125,7 @@ function updateSkillsView() {
   renderSkills(sorted);
 }
 
-// Event listeners for filter buttons
+//event listeners for filter buttons
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
     filterButtons.forEach((btn) => {
@@ -141,11 +141,11 @@ filterButtons.forEach((button) => {
   });
 });
 
-// Event listener for sort dropdown
+//event listeners for sort dropdown
 sortSelect.addEventListener("change", (e) => {
   currentSort = e.target.value;
   updateSkillsView();
 });
 
-// Initial render
+//initial
 updateSkillsView();
